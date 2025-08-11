@@ -1,0 +1,65 @@
+create a folder ---> open vs code in it ---> open terminal 
+
+uv init cdpro 
+
+close the vs code and open vs code from this cdpro folder . 
+
+
+uv venv 
+
+.venv\Scripts\activate 
+
+
+
+Upload your dataset in this cdpro folder . 
+
+
+Create 'requirements.txt' file in ehich we will install all packages that is 
+important to run the application . 
+
+open terminal and write 
+
+uv add -r requirements.txt 
+
+
+create an app.py file where we have all the logics . 
+
+Now we will upload all the code to github . 
+
+git init
+
+git add .
+git commit -m "first commit"
+
+git branch -M main
+
+git remote add origin https://github.com/payal159/CI-CD-PROJECT
+
+git push -u origin main
+
+
+
+Now create a new folder  .github/workflows/s3_sync.yaml 
+
+
+Now we will go to  AWS ---> 
+IAM ---> Users ----> New User ---> Attach Policy(Administrator Access , AmazonS3FullAcces)
+
+---> create User(CLI) ---> click -n create Access key ---> we get Access key , Access keyID
+
+
+AWS --> s3 bucket ----> New bucket Name (this will equal that is present in s3_sync.yaml)
+
+
+Go to github ----> Settings ---> Actions ---> Secrets ---> Add secrets one by one 
+
+
+Go to github --> Actions ---> run all the jobs . 
+
+
+-----------------------------------------------------------------------------------------------------------
+
+step-1   Delete S3 Bucket 
+
+step-2   Delete the User from IAM Role 
+
